@@ -41,9 +41,9 @@ This software package is a plugin module for HFOS.
 """,
       dependency_links=[],
       install_requires=['hfos>=1.2.0'],
-      entry_points="""[hfos.components]
+      entry_points="""[isomer.components]
     shareables=hfos.shareables.manager:Manager
-    [hfos.schemata]
+    [isomer.schemata]
     shareable=hfos.shareables.shareable:Shareable
     """,
       test_suite="tests.main.main",

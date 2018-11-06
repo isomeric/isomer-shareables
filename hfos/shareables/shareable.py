@@ -39,8 +39,8 @@ Provisions
 
 """
 
-from hfos.schemata.base import base_object
-from hfos.schemata.defaultform import editbuttons
+from isomer.schemata.base import base_object
+from isomer.schemata.defaultform import editbuttons
 
 ShareableSchema = base_object('shareable', all_roles='crew')
 
