@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name hfosFrontendApp.controller:SharingCtrl
+ * @name isomerFrontendApp.controller:SharingCtrl
  * @description
  * # SharingCtrl
- * Controller of the hfosFrontendApp
+ * Controller of the isomerFrontendApp
  */
 class SharingCtrl {
     constructor($scope, $compile, ObjectProxy, moment, notification, socket) {
@@ -125,7 +125,7 @@ class SharingCtrl {
                 self.updateTimetable();
             }
         });
-        this.socket.listen("hfos.shareables.manager", function(msg) {
+        this.socket.listen('isomer.shareables.manager', function(msg) {
              if (msg.action == 'reserve') {
                  if (msg.data == true) {
                      self.notification.add('success', 'Reserved', 'Your reservation has been accepted.', 10);
@@ -147,7 +147,7 @@ class SharingCtrl {
 
     reserve() {
         let reservation = {
-            component: 'hfos.shareables.manager',
+            component: 'isomer.shareables.manager',
             action: 'reserve',
             data: {
                 uuid: this.reservationtarget,

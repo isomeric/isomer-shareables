@@ -1,5 +1,5 @@
 # coding=utf-8
-"""HFOS Backend module"""
+"""Isomer Backend module"""
 
 __author__ = "Heiko 'riot' Weinen <riot@c-base.org>"
 __license__ = "AGPLv3"

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-# HFOS - Hackerfleet Operating System
-# ===================================
+# Isomer Application Framework
+# ============================
 # Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -23,28 +23,28 @@ __license__ = "AGPLv3"
 
 from setuptools import setup, find_packages
 
-setup(name="hfos-shareables",
+setup(name="isomer-shareables",
       version="0.0.1",
-      description="hfos-shareable",
+      description="isomer-shareable",
 
-      author="Hackerfleet Community",
+      author="Isomer Community",
       author_email="riot@c-base.org",
-      url="https://github.com/hackerfleet/hfos-shareable",
+      url="https://github.com/isomeric/isomer-shareable",
       license="GNU Affero General Public License v3",
       packages=find_packages(),
-      long_description="""HFOS - Shareables
-=================
+      long_description="""Isomer - Shareables
+===================
 
 A modern, opensource approach to shareable resource management.
 
-This software package is a plugin module for HFOS.
+This software package is a plugin module for Isomer.
 """,
       dependency_links=[],
-      install_requires=['hfos>=1.2.0'],
+      install_requires=['isomer>=1.0.0'],
       entry_points="""[isomer.components]
-    shareables=hfos.shareables.manager:Manager
+    shareables=isomer.shareables.manager:Manager
     [isomer.schemata]
-    shareable=hfos.shareables.shareable:Shareable
+    shareable=isomer.shareables.shareable:Shareable
     """,
       test_suite="tests.main.main",
       )
