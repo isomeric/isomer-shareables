@@ -3,7 +3,7 @@
 
 # Isomer Application Framework
 # ============================
-# Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
+# Copyright (C) 2011-2019 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -45,37 +45,57 @@ from isomer.schemata.defaultform import editbuttons
 ShareableSchema = base_object('shareable', all_roles='crew')
 
 ShareableSchema['properties'].update({
-    'creatoruuid': {'type': 'string', 'title': 'Creator',
-                    'description': 'Creator of Shareable'},
-    'created': {'type': 'string', 'format': 'datetimepicker',
-                'title': 'Creation time',
-                'description': 'Time of object creation'},
-    'priority': {'type': 'number', 'title': 'Priority',
-                 'description': '1 is Highest priority', 'minimum': 1},
-    'tags': {'type': 'string', 'title': 'Tags',
-             'description': 'Attached tags'},
-    'notes': {'type': 'string', 'format': 'html', 'default': '',
-              'title': 'Scheduled item notes',
-              'description': 'Free text entry'},
+    'creatoruuid': {
+        'type': 'string', 'title': 'Creator',
+        'description': 'Creator of Shareable'
+    },
+    'created': {
+        'type': 'string', 'format': 'datetimepicker',
+        'title': 'Creation time',
+        'description': 'Time of object creation'
+    },
+    'priority': {
+        'type': 'number', 'title': 'Priority',
+        'description': '1 is Highest priority', 'minimum': 1
+    },
+    'tags': {
+        'type': 'string', 'title': 'Tags',
+        'description': 'Attached tags'
+    },
+    'notes': {
+        'type': 'string', 'format': 'html', 'default': '',
+        'title': 'Scheduled item notes',
+        'description': 'Free text entry'
+    },
     'reservations': {
         'type': 'array',
         'default': [],
         'items': {
             'type': 'object',
             'properties': {
-                'useruuid': {'type': 'string', 'minLength': 36,
-                             'title': 'User',
-                             'description': 'Reserving User'},
-                'starttime': {'type': 'string', 'format': 'datetimepicker',
-                              'title': 'Begin',
-                              'description': 'Begin of reservation'},
-                'endtime': {'type': 'string', 'format': 'datetimepicker',
-                            'title': 'End',
-                            'description': 'End of reservation'},
-                'title': {'type': 'string', 'title': 'Title',
-                          'description': 'Reservation Title'},
-                'description': {'type': 'string', 'title': 'Description',
-                                'description': 'Reservation Details'}
+                'useruuid': {
+                    'type': 'string', 'minLength': 36,
+                    'title': 'User',
+                    'description': 'Reserving User'
+                },
+                'starttime': {
+                    'type': 'string', 'format': 'datetimepicker',
+                    'title': 'Begin',
+                    'description': 'Begin of reservation'
+                },
+                'endtime': {
+                    'type': 'string', 'format': 'datetimepicker',
+                    'title': 'End',
+                    'description': 'End of reservation'
+                },
+                'title': {
+                    'type': 'string', 'title': 'Title',
+                    'description': 'Reservation Title'
+                },
+                'description': {
+                    'type': 'string', 'title': 'Description',
+                    'description': 'Reservation Details'
+                }
             }
         }
     }
@@ -97,8 +117,10 @@ ShareableForm = [
                         'options': {
                             "type": "user",
                             "asyncCallback": "$ctrl.getFormData",
-                            "map": {'valueProperty': "uuid",
-                                    'nameProperty': 'name'}
+                            "map": {
+                                'valueProperty': "uuid",
+                                'nameProperty': 'name'
+                            }
                         },
                         "onChange": 'fieldChange(modelValue, form)'
                         #                             '''function (

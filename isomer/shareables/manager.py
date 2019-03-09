@@ -3,7 +3,7 @@
 
 # Isomer Application Framework
 # ============================
-# Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
+# Copyright (C) 2011-2019 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -35,6 +35,7 @@ from isomer.database import objectmodels
 from isomer.logger import debug, error
 from isomer.events.system import authorized_event
 from isomer.events.client import send
+
 
 # from pprint import pprint
 
