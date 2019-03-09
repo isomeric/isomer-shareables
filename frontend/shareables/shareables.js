@@ -21,7 +21,7 @@ class SharingCtrl {
         this.shareables = [];
 
         let self = this;
-        this.op.search('shareable').then(function(msg) {
+        this.op.search('shareable').then(function (msg) {
             console.log('[SHAREABLES] Got the list of shareables:', msg, self.reservationlookup);
             self.reservationlookup = msg.data.list;
             self.reservationtarget = self.reservationlookup[0]['uuid'];
@@ -87,7 +87,7 @@ class SharingCtrl {
             event[field] = !event[field];
         };
 
-        this.getReservations = function() {
+        this.getReservations = function () {
             this.op.getList('shareable', {'reservations': {'$elemMatch': {'endtime': {'$gt': now}}}}, ['*']);
         };
 
@@ -125,15 +125,15 @@ class SharingCtrl {
                 self.updateTimetable();
             }
         });
-        this.socket.listen('isomer.shareables.manager', function(msg) {
-             if (msg.action == 'reserve') {
-                 if (msg.data == true) {
-                     self.notification.add('success', 'Reserved', 'Your reservation has been accepted.', 10);
-                     self.getReservations();
-                 } else {
-                     self.notification.add('danger', 'Blocked', 'The shareable is already reserved during that time.', 10);
-                 }
-             }
+        this.socket.listen('isomer.shareables.manager', function (msg) {
+            if (msg.action == 'reserve') {
+                if (msg.data == true) {
+                    self.notification.add('success', 'Reserved', 'Your reservation has been accepted.', 10);
+                    self.getReservations();
+                } else {
+                    self.notification.add('danger', 'Blocked', 'The shareable is already reserved during that time.', 10);
+                }
+            }
         });
         this.eventRender = function (event, element, view) {
             console.log("HALLO: ", event, element, view);
